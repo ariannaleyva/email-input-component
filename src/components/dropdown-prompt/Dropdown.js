@@ -11,11 +11,12 @@ const Dropdown = React.forwardRef((props, ref) => {
     keyPressHandler,
     optionList,
     selectOptionHandler,
+    removeSelectedOptionHandler,
   } = props;
   return (
     <div className={styles.dropdown}>
       <div className={styles["dropdown-items"]}>
-        <SelectedItems selectedItems={selectedItems} />
+        <SelectedItems selectedItems={selectedItems} onRemoveItem={removeSelectedOptionHandler} />
         <div className={styles["dropdown__search"]}>
           <input
             className={styles["dropdown__input"]}

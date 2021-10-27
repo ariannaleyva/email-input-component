@@ -1,7 +1,7 @@
 import { useRef, useReducer, useCallback, useState } from "react";
 import Dropdown from "./Dropdown";
 import {initialState, reducer } from "../../store/dropdown/reducer";
-import { SET_OPTION_LIST, ADD_SELECTED_OPTION } from '../../store/dropdown/actionTypes';
+import { SET_OPTION_LIST, ADD_SELECTED_OPTION, REMOVE_SELECTED_OPTION } from '../../store/dropdown/actionTypes';
 import useDebounceExecution from "../../hooks/debounceExecution";
 
 const DropdownContainer = ({ searchFn }) => {
@@ -15,6 +15,11 @@ const DropdownContainer = ({ searchFn }) => {
     setSearchText("");
     searchInput.current.focus();
   };
+
+  const removeSelectedOptionHandler = (option) => {
+    dispatch({ type: REMOVE_SELECTED_OPTION, payload: option});
+    searchInput.current.focus();
+  }
   
 
   const keyPressHandler = (event) => {
@@ -49,16 +54,15 @@ const DropdownContainer = ({ searchFn }) => {
 
   useDebounceExecution(200, processSearchedOptions);
 
-
-
-  return <Dropdown 
+  return <Dropdown
     searchFn={searchFn} 
     selectedItems={state.selectedItems} 
     searchText={searchText} 
     setSearchText={setSearchText}  
     keyPressHandler={keyPressHandler} 
     optionList={state.optionList} 
-    selectOptionHandler={selectOptionHandler}  
+    selectOptionHandler={selectOptionHandler} 
+    removeSelectedOptionHandler ={removeSelectedOptionHandler} 
     ref={searchInput}/>
 
 }
