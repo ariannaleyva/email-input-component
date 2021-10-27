@@ -15,7 +15,7 @@ Add tests
 
 Add Error Handling
 
-The Dropdown behavior can be improved. At the moment the elements can be only selected by clicking over them. However a new state can be added to set the current item of the dropdown and allow adding them by implementing keyUp events.
+The Dropdown behavior can be improved. At the moment the elements can be only selected by clicking over them. However a new state can be added to set a current item of the dropdown and allow adding it by implementing keyUp events.
 
 Add Typechecking with PropTypes
 
