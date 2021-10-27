@@ -1,4 +1,5 @@
-
+## View Demo
+Open [http://email-input-component.s3-website-us-east-1.amazonaws.com/] to view it in the browser.
 
 ## Available Scripts
 
