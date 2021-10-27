@@ -1,27 +1,42 @@
 # View Demo
 Open [http://email-input-component.s3-website-us-east-1.amazonaws.com/] to view it in the browser.
 
+# Solution Highlights
+It was structured in a way that can be reused not only for Email inputs but for other selection components.
+
+Container creation to isolate behavior from HTML structure and appearance.
+
+CSS modules to allow the component styles don't conflict with other styles.
+
+The search for emails was debounced
+
+Used of callbacks to avoid unnecessary rerender cycles
+
+Use of github workflow actions 
+
 
 # List of Changes
-Add support for other common properties of native html email input (pattern, selectedOption, isMultiple, size, readOnly, placeHolder, etc )
+Add support for other common properties of native HTML email input (pattern, selectedOption, isMultiple, size, readOnly, placeHolder, etc )
 
 Add a currentValue property that allows creating EmailInputs with a set of emails already selected.
 
 Add properties to set the style of the component.
 
-Check for validation before adding the elements. Currently is hard coded, if the email can not be found in the possible options is marked as invalid. 
+Check for validation before adding the elements. Currently is hardcoded, if the email can not be found in the possible options is marked as invalid.
+
+For the suggested emails matching the search criteria highlight the fragment that matches 
 
 Add tests
 
 Add Error Handling
 
-The Dropdown behavior can be improved. At the moment the elements can be only selected by clicking over them. However a new state can be added to set a current item of the dropdown and allow adding it by implementing keyUp events.
+The Dropdown behavior can be improved. At the moment the elements can be only selected by clicking over them. However, a new state can be added to set a current item of the dropdown and allow adding it by implementing keyUp events.
 
 Add Typechecking with PropTypes
 
 
 ## Suggestions for the UI
-Selected emails. I would prefer that the delete button is always visible not only when you hover over the item. For some users it may not be evident from the start how to delete items. 
+Selected emails. I would prefer that the delete button is always visible not only when you hover over the item. For some users, it may not be evident from the start how to delete items. 
 
 ## Available Scripts
 
